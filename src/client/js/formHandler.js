@@ -5,8 +5,8 @@ function handleSubmit(event) {
     let formText = document.getElementById('name').value
     Client.checkForName(formText)
 
-    console.log("::: Form Submitted :::")
-    // fetch('http://localhost:8080/test')
+    // console.log("::: Form Submitted :::")
+    // fetch('http://localhost:8081/test')
     // .then(res => res.json())
     // .then(function(res) {
     //     document.getElementById('results').innerHTML = res.message
@@ -15,34 +15,27 @@ function handleSubmit(event) {
     let reqBody = {
         theText : formText
     }
+    console.log('checking');
+    console.log(formText);
+    console.log(reqBody);
 
-    fetch('/analysis', {
+    fetch('http://localhost:8083/analysis', {
         method: 'POST',
-        body: JSON.stringify(reqBody),
-        headers: {"Content-Type" : "application/json"}
+        credentials: 'same-origin',
+        mode: 'cors',
+        headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+        },
+        body: JSON.stringify({input: formText}),
     })
     .then(res => res.json())
     .then(function(res) {
-        // document.getElementById('results').innerHTML = res.polarity
         console.log(res);
+        document.getElementById('results').innerHTML = res.polarity
         alert(dataText);
     })
 
-    // const postData = async () => {
-    //     try {
-    //         const response = await fetch('/analysis', {
-    //             method: 'POST',
-    //             body: JSON.stringify(formText),
-    //             headers: {"Content-Type" : "application/json"}
-    //         })
-    //         const newData = await response.json();
-    //         console.log(newData)
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-        
-    // }
-    
 }
 
 export { handleSubmit }

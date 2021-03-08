@@ -10,11 +10,12 @@ const app = express()
 // dependencies
 const bodyParser = require('body-parser');
 // middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 // cors
 const cors = require('cors')
-app.use(cors())
+app.use(cors());
+
 const mockAPIResponse = require('./mockAPI.js')
 
 app.use(express.static('dist'))
@@ -23,8 +24,8 @@ console.log(__dirname)
 console.log(`Your api key is ${process.env.API_KEY}`);
 
 const apiurl = 'https://api.meaningcloud.com/sentiment-2.1'
-const application_key = process.env.API_KEY
-const lang = 'en';
+const application_key = process.env.API_KEY;
+
 
 const fetch = require("node-fetch");
 
@@ -34,7 +35,7 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
+app.listen(8083, function () {
     console.log('Example app listening on port 8081!')
 })
 
@@ -42,15 +43,19 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-const mock = `https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&of=json&txt=Main%20dishes%20were%20quite%20good%2C%20but%20desserts%20were%20too%20sweet%20for%20me.&lang=en`
+// const mock = `https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&of=json&txt=Main%20dishes%20were%20quite%20good%2C%20but%20desserts%20were%20too%20sweet%20for%20me.&lang=en`
+
 app.post('/analysis', async (req, res, next) => {
-  const response = await fetch(mock);
+  console.log(req.body);
+  const encoded = encodeURI(req.body.input);
+  const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&of=json&txt=${encoded}&lang=en`);  
+//  const response = await fetch(mock);
   try { 
     const data = await response.json();
-    console.log( ' server is running below ')
-    console.log(req);
-    console.log(data);
-    res.send(response)
+    // console.log( ' server is running below ')
+    // console.log(req.body.theText);
+    // console.log(data);
+    res.send(data)
   } catch (error) {
       console.log(error);
   }  
