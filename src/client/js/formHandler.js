@@ -19,7 +19,17 @@ function handleSubmit(event) {
     console.log(formText);
     console.log(reqBody);
 
+    const getData = async(url = 'http://localhost:8083/analysis', data = {}) => {
+        let response = await fetch (url, {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify(data);
+        });
+    }
     fetch('http://localhost:8083/analysis', {
+        body: JSON.stringify(data),
         method: 'POST',
         credentials: 'same-origin',
         mode: 'cors',
@@ -27,7 +37,6 @@ function handleSubmit(event) {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
         },
-        body: JSON.stringify({input: formText}),
     })
     .then(res => res.json())
     .then(function(res) {
