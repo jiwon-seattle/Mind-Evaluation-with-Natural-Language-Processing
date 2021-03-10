@@ -11,7 +11,7 @@
 
 ## Instructions
 
-A <strong>Udacity</strong> front-end <em> Evaluate a News Article with Natural Language Processing.</em> <br/>
+A <strong>Udacity</strong> front-end <em> Evaluate a News Article with Natural Language Processing.</em> project.<br/>
 
 <img src="img/screenshot1.png" width="700px" height="400px" /> 
 
