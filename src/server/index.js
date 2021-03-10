@@ -26,9 +26,9 @@ const application_key = process.env.API_KEY;
 
 const fetch = require("node-fetch");
 
-app.get('/', function (req, res) {
-    res.sendFile(path.resolve('src/client/views/index.html'))
-})
+// app.get('/', function (req, res) {
+//     res.sendFile(path.resolve('src/client/views/index.html'))
+// })
 
 app.get('/', function (req, res) {
   res.sendFile(path.resolve('index.html'))
@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
 
 // designates what port the app will listen to for incoming requests
 app.listen(8083, function () {
-    console.log('Example app listening on port 8081!')
+    console.log('Example app listening on port 8083!')
 })
 
 app.post('/analysis', async (req, res, next) => {
