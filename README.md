@@ -56,7 +56,7 @@ The production site is automatically hosted in http://localhost:8080 and server 
 - Node.js
 - WebPack
 - Express.js
-- [Service Workers] (https://developers.google.com/web/tools/workbox/guides/generate-service-worker/webpack)
+- [Service Workers](https://developers.google.com/web/tools/workbox/guides/generate-service-worker/webpack)
 - [NLP API (Meaningful Cloud)](https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response)
 - [Heroku Deploymenet](https://www.heroku.com/)
 
