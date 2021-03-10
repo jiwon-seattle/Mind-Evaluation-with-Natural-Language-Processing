@@ -11,7 +11,7 @@
 
 ## Instructions
 
-A <strong>Udacity</strong> front-end <em> Evaluate a News Article with Natural Language Processing.</em> project.<br/>
+A <strong>Udacity</strong> front-end <em> Evaluate a News Article with Natural Language Processing</em> project.<br/>
 
 <img src="img/screenshot1.png" width="700px" height="400px" /> 
 
@@ -49,7 +49,7 @@ The production site is automatically hosted in http://localhost:8080 and server 
 ## Technologies
 
 - HTML
-- SASS
+- Sass
 - Node.js
 - WebPack
 - Express.js
