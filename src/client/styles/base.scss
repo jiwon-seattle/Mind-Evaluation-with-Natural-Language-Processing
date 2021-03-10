@@ -1,15 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
+
+//colors
+$primary-color   : #34495e;
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    color: red;
+    font-family: 'Roboto', sans-serif;
+    background-color: $primary-color;
 }
 
-main {
-    flex: 2;
+.section {
+    max-width: 1000px;
+    margin: 75px auto;
+    border: 2px solid red;
+    .description{
+        text-align: center;
+        border: 2px solid yellow;
+        padding: 50px 50px;
+        color:lightgrey;
+    }
 }
 
-section {
-    max-width: 800px;
-    margin: 50px auto;
-}
