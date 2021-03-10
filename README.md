@@ -40,7 +40,6 @@ Currently, the app is deployed via Heroku. Visit https://evening-ravine-68189.he
 
 ```bash
   $ git clone https://github.com/jiwon-seattle/Mind-Evaluation-with-Natural-Language-Processing.git
-  $ cd website
   $ npm install  
   # After successfull pkg installtion
   $ npm start
