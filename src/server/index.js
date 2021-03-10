@@ -30,6 +30,10 @@ app.get('/', function (req, res) {
     res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
+app.get('/', function (req, res) {
+  res.sendFile(path.resolve('index.html'))
+})
+
 // designates what port the app will listen to for incoming requests
 app.listen(8083, function () {
     console.log('Example app listening on port 8081!')
