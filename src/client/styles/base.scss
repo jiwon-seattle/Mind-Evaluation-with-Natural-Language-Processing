@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 
 //colors
 $primary-color   : #34495e;
@@ -13,11 +13,9 @@ body {
 
 .section {
     max-width: 1000px;
-    margin: 75px auto;
-    border: 2px solid red;
+    margin: 85px auto;
     .description{
         text-align: center;
-        border: 2px solid yellow;
         padding: 50px 50px;
         color:lightgrey;
     }

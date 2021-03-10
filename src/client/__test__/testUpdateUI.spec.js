@@ -11,9 +11,9 @@ describe("Testing the submit functionality", () => {
     const element = dom.window.document.getElementById('results');
 
     updateUI(element, content);
-    expect(element.innerHTML).toBe(`Polarity: POSITIVE <br>
-    Confidence: 100 <br>
-    Subjectivity: SUBJECTIVE <br>
-    Irony: NONIRONIC`);
+    expect(element.innerHTML).toBe(`<div class="results"><div>Polarity: POSITIVE <br></div>
+    <div>Confidence: 100 <br><div>
+    <div>Subjectivity: SUBJECTIVE <br><div>
+    <div>Irony: NONIRONIC<div></div>`);
   });
 });
