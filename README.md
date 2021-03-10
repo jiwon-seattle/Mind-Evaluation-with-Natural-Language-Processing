@@ -36,7 +36,7 @@ Currently, the app is deployed via Heroku. Visit https://evening-ravine-68189.he
 
 ### To run dev mode locally:
 
-[NLP API (Meaningful Cloud)](https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response)) is needed to run the development mode. Please have the API and put in the .env file. 
+[NLP API (Meaningful Cloud)](https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response) is needed to run the development mode. Please have the API and put in the .env file. 
 
 ```bash
   $ git clone https://github.com/jiwon-seattle/Mind-Evaluation-with-Natural-Language-Processing.git
