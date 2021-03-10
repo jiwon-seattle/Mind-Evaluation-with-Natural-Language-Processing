@@ -11,9 +11,9 @@
 
 ## Instructions
 
-A <strong>Udacity</strong> front-end <em> Evaluate a News Article with Natural Language Processing. <br/>
+A <strong>Udacity</strong> front-end <em> Evaluate a News Article with Natural Language Processing.</em> <br/>
 
-<img src="img/screenshot1.png" width="500px" height="400px" /> 
+<img src="img/screenshot1.png" width="700px" height="400px" /> 
 
 Natural Language Processing leverages machine learning and deep learning create a program that can interpret natural human speech. Systems like Alexa, Google Assistant, and many voice interaction programs are well known to us, but understanding human speech is an incredibly difficult task and requires a lot of resources to achieve. Full disclosure, this is the Wikipedia definition, but I found it to be a clear one:
 
