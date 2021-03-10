@@ -18,13 +18,15 @@ app.use(cors());
 
 app.use(express.static('dist'))
 
+app.use(express.static(path.join(__dirname, 'dist')));
+app.set('port', process.env.PORT || 8080);
+
 const application_key = process.env.API_KEY;
 
 
 const fetch = require("node-fetch");
 
 app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
     res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
@@ -34,7 +36,6 @@ app.listen(8083, function () {
 })
 
 app.post('/analysis', async (req, res, next) => {
-  console.log(req.body);
   const encoded = encodeURI(req.body.input);
   const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&of=json&txt=${encoded}&lang=en`);  
 

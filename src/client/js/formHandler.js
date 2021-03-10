@@ -19,7 +19,6 @@ function handleSubmit(event) {
     })
     .then(res => res.json())
     .then(function(res) {
-        console.log(res);
         let element = document.getElementById('results');
         Client.updateUI(element, res);
     })
