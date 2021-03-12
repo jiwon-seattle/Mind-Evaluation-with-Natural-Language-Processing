@@ -5,38 +5,34 @@ dotenv.config()
 
 // express to run server and routes
 const express = require('express')
+
 // instance of app
 const app = express()
+
 // dependencies
-const bodyParser = require('body-parser');
-// middleware
-//app.use(bodyParser.urlencoded({ extended: false }))
+const bodyParser = require('body-parser')
 app.use(bodyParser.json())
+
 // cors
 const cors = require('cors')
-app.use(cors());
+app.use(cors())
 
 app.use(express.static('dist'))
 
-app.use(express.static(path.join(__dirname, 'dist')));
-app.set('port', process.env.PORT || 8080);
+app.use(express.static(path.join(__dirname, 'dist')))
+app.set('port', process.env.PORT || 8080)
 
 const server = app.listen(app.get('port'), function() {
-  console.log('listening on port ', server.address().port);
+  console.log('listening on port ', server.address().port)
 });
 
-const application_key = process.env.API_KEY;
+const application_key = process.env.API_KEY
 
-
-const fetch = require("node-fetch");
+const fetch = require("node-fetch")
 
 app.get('/', function (req, res) {
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile(path.resolve('dist/index.html'))
 })
-
-// app.get('/', function (req, res) {
-//   res.sendFile(path.resolve('index.html'))
-// })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8083, function () {
@@ -44,13 +40,13 @@ app.listen(8083, function () {
 })
 
 app.post('/analysis', async (req, res, next) => {
-  const encoded = encodeURI(req.body.input);
-  const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&of=json&txt=${encoded}&lang=en`);  
+  const encoded = encodeURI(req.body.input)
+  const response = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${application_key}&of=json&txt=${encoded}&lang=en`)  
 
   try { 
-    const data = await response.json();
+    const data = await response.json()
     res.send(data)
   } catch (error) {
-      console.log(error);
+      console.log(error)
   }  
 })
