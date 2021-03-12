@@ -7,10 +7,10 @@ function updateUI(element, content) {
 
   else {
 
-    element.innerHTML = `<div class="results"><div>Polarity: POSITIVE <br></div>
+    element.innerHTML = `<div>Polarity: POSITIVE <br></div>
     <div>Confidence: 100 <br></div>
     <div>Subjectivity: SUBJECTIVE <br></div>
-    <div>Irony: NONIRONIC<div></div>`;
+    <div>Irony: NONIRONIC</div>`;
   }
 }
 
