@@ -11,9 +11,16 @@ describe("Testing the submit functionality", () => {
     const element = dom.window.document.getElementById('results');
 
     updateUI(element, content);
+<<<<<<< HEAD
     expect(element.innerHTML).toBe(`<div class="output"><div>Polarity: POSITIVE <br></div>
     <div>Confidence: 100 <br></div>
     <div>Subjectivity: SUBJECTIVE <br></div>
     <div>Irony: NONIRONIC</div></div>`);
+=======
+    expect(element.innerHTML).toBe(`<div>Polarity: POSITIVE <br></div>
+    <div>Confidence: 100 <br></div>
+    <div>Subjectivity: SUBJECTIVE <br></div>
+    <div>Irony: NONIRONIC</div>`);
+>>>>>>> 8b6d3a5d6fe348522cc3f521ff34e09713f99dac
   });
 });
